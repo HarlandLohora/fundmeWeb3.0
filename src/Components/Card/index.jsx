@@ -6,8 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-
-const index = ({ fund, eths }) => {
+const index = ({ fund, eths, donateHandler }) => {
     const { title, img, info, eth } = fund
     return (
         <Card style={{ margin: "1%", width: "20%" }}>
@@ -30,7 +29,7 @@ const index = ({ fund, eths }) => {
                 </Typography>
             </CardContent>
             <CardActions style={{ display: "flex", justifyContent: "center" }}>
-                <Button size="large" variant="outlined" disabled={(eths >= eth) ? null : true} >Donate</Button>
+                <Button size="large" variant="outlined" disabled={(eths >= eth) ? null : true} onClick={donateHandler}>Donate</Button>
             </CardActions>
         </Card>
     )
