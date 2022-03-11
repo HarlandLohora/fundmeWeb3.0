@@ -1,22 +1,20 @@
 import { useState } from "react"
 import Container from "@mui/material/Container"
 import "./App.css"
+import Alert from "./Components/Alert"
+
+
 import HomePage from "./Pages/HomePage"
+import FundsPage from "./Pages/FundsPage"
+
 
 function App() {
-  const [customerAddress, setCustomerAddress] = useState("")
-
+  const [customerAddress, setCustomerAddress] = useState()
+  const [eth, setEth] = useState();
   const connectWallet = async () => {
     try {
       if (window.ethereum) {
-        console.log("Connect wallet")
-        const accounts =
-          await window.ethereum.request(
-            {
-              method:
-                "eth_requestAccounts",
-            }
-          )
+        const accounts = await window.ethereum.request({ method: "eth_requestAccounts" })
         setCustomerAddress(accounts[0])
       }
     } catch (err) {
@@ -28,10 +26,22 @@ function App() {
     <Container maxWidth="xl">
       <div className="navbar">
         <h1>FündMe</h1>
+
+        {customerAddress && (<>
+          <div className="wallet">
+            <img src="/src/wallet.webp" />
+            <p className="cut-text">{customerAddress}</p>
+          </div>
+          <div className="wallet">
+            <img src="/src/eth.png" />
+            <p>{eth}</p>
+          </div>
+        </>)
+        }
       </div>
-      <HomePage
-        connectWallet={connectWallet}
-      />
+      {/* <Alert /> */}
+      {!customerAddress && <HomePage connectWallet={connectWallet} />}
+      {customerAddress && <FundsPage customerAddress={customerAddress} setEth={setEth} eth={eth} />}
     </Container>
   )
 }
