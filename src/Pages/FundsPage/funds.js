@@ -3,14 +3,14 @@ const funds = [
         id: 1,
         title: "Startup",
         info: "Im creating my startup shalala",
-        img: "/src/startup.jpg",
+        img: "/startup.jpg",
         eth: "0.01"
     },
     {
         id: 2,
         title: "Research",
         info: "Let's find cancer cure",
-        img: "/src/research.jpg",
+        img: "/research.jpg",
         eth: "0.8003"
     },
     {
@@ -24,14 +24,14 @@ const funds = [
         id: 4,
         title: "University",
         info: "Help me with my tuition",
-        img: "/src/university.jpg",
+        img: "/university.jpg",
         eth: "0.031"
     },
     {
         id: 5,
         title: "Travel",
         info: "I want travel around the 🌏",
-        img: "/src/travel.jpg",
+        img: "/travel.jpg",
         eth: "0.0001"
     }
 ]
