@@ -6,15 +6,14 @@ import { FoundSpace } from "./styles"
 
 import fundsArr from "./funds"
 
-const index = ({ customerAddress }) => {
+const index = ({ customerAddress, setEth, eth }) => {
     console.log(fundsArr)
     const [funds, setFunds] = useState([])
     const getBalance = async () => {
         try {
             const provider = new ethers.providers.Web3Provider(window.ethereum)
             const balance = await provider.getBalance(customerAddress)
-            console.log(provider)
-            console.log(utils.formatEther(balance))
+            setEth(utils.formatEther(balance))
         } catch (error) {
             console.log(error)
         }
@@ -27,7 +26,7 @@ const index = ({ customerAddress }) => {
 
     return (
         <FoundSpace>{funds.map((fund, i) => {
-            return <Card key={i} fund={fund}></Card>
+            return <Card key={i} fund={fund} eths={eth}></Card>
         })}</FoundSpace>
     )
 }

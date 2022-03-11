@@ -10,7 +10,7 @@ import FundsPage from "./Pages/FundsPage"
 
 function App() {
   const [customerAddress, setCustomerAddress] = useState()
-
+  const [eth, setEth] = useState();
   const connectWallet = async () => {
     try {
       if (window.ethereum) {
@@ -27,15 +27,21 @@ function App() {
       <div className="navbar">
         <h1>FündMe</h1>
 
-        {customerAddress && <div className="wallet">
-          <img src="/src/wallet.webp" />
-          <p className="cut-text">{customerAddress}</p>
-        </div>
+        {customerAddress && (<>
+          <div className="wallet">
+            <img src="/src/wallet.webp" />
+            <p className="cut-text">{customerAddress}</p>
+          </div>
+          <div className="wallet">
+            <img src="/src/eth.png" />
+            <p>{eth}</p>
+          </div>
+        </>)
         }
       </div>
       {/* <Alert /> */}
       {!customerAddress && <HomePage connectWallet={connectWallet} />}
-      {customerAddress && <FundsPage customerAddress={customerAddress} />}
+      {customerAddress && <FundsPage customerAddress={customerAddress} setEth={setEth} eth={eth} />}
     </Container>
   )
 }

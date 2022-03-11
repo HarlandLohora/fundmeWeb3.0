@@ -7,9 +7,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 
-const index = ({ fund }) => {
-    const { title, img, info } = fund
-    console.log(title)
+const index = ({ fund, eths }) => {
+    const { title, img, info, eth } = fund
     return (
         <Card style={{ margin: "1%", width: "20%" }}>
             <CardMedia
@@ -22,13 +21,16 @@ const index = ({ fund }) => {
                 <Typography gutterBottom variant="h5" component="div">
                     {title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="text.secondary" gutterBottom>
                     {info}
                 </Typography>
+                <Typography component="div" gutterBottom>
+                    <img src="/src/eth.png" style={{ width: "20px", height: "20px" }} />
+                    {eth}
+                </Typography>
             </CardContent>
-            <CardActions>
-                <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button>
+            <CardActions style={{ display: "flex", justifyContent: "center" }}>
+                <Button size="large" variant="outlined" disabled={(eths >= eth) ? null : true} >Donate</Button>
             </CardActions>
         </Card>
     )

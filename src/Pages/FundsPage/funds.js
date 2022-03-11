@@ -3,31 +3,36 @@ const funds = [
         id: 1,
         title: "Startup",
         info: "Im creating my startup shalala",
-        img: "/src/startup.jpg"
+        img: "/src/startup.jpg",
+        eth: "0.01"
     },
     {
         id: 2,
         title: "Research",
-        info: "Im creating my startup shalala",
-        img: "/src/research.jpg"
+        info: "Let's find cancer cure",
+        img: "/src/research.jpg",
+        eth: "0.8003"
     },
     {
         id: 3,
         title: "New school",
-        info: "Im creating my startup shalala",
-        img: "/src/school.jpg"
+        info: "Help us build a new school",
+        img: "/src/school.jpg",
+        eth: "0.001"
     },
     {
         id: 4,
         title: "University",
-        info: "Im creating my startup shalala",
-        img: "/src/university.jpg"
+        info: "Help me with my tuition",
+        img: "/src/university.jpg",
+        eth: "0.031"
     },
     {
         id: 5,
         title: "Travel",
-        info: "Im creating my startup shalala",
-        img: "/src/travel.jpg"
+        info: "I want travel around the 🌏",
+        img: "/src/travel.jpg",
+        eth: "0.0001"
     }
 ]
 
