@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Eth from "../../eth.png"
 
 const index = ({ fund, eths, donateHandler }) => {
     const { title, img, info, eth } = fund
@@ -24,7 +25,7 @@ const index = ({ fund, eths, donateHandler }) => {
                     {info}
                 </Typography>
                 <Typography component="div" gutterBottom>
-                    <img src="/src/eth.png" style={{ width: "20px", height: "20px" }} />
+                    <img src={Eth} style={{ width: "20px", height: "20px" }} />
                     {eth}
                 </Typography>
             </CardContent>

@@ -3,6 +3,8 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import LinearProgress from '@mui/material/LinearProgress';
+import Tick from "../../tick.png"
+
 const style = {
     position: 'absolute',
     top: '50%',
@@ -50,7 +52,7 @@ const index = ({ open, completed, error }) => {
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                             Wait a few minutes, we're indexing the transaction
                         </Typography>
-                        <img src={"/src/tick.png"} style={{ width: "300px", height: "300px" }} />
+                        <img src={Tick} style={{ width: "300px", height: "300px" }} />
                     </>
                     }
                     {
