@@ -17,7 +17,7 @@ const funds = [
         id: 3,
         title: "New school",
         info: "Help us build a new school",
-        img: "/src/school.jpg",
+        img: "/school.jpg",
         eth: "0.001"
     },
     {
