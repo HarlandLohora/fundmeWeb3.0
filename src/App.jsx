@@ -2,8 +2,8 @@ import { useState } from "react"
 import Container from "@mui/material/Container"
 import "./App.css"
 import Alert from "./Components/Alert"
-
-
+import Eth from "./eth.png"
+import Wallet from './wallet.webp'
 import HomePage from "./Pages/HomePage"
 import FundsPage from "./Pages/FundsPage"
 
@@ -29,11 +29,11 @@ function App() {
 
         {customerAddress && (<>
           <div className="wallet">
-            <img src="/src/wallet.webp" />
+            <img src={Wallet} />
             <p className="cut-text">{customerAddress}</p>
           </div>
           <div className="wallet">
-            <img src="/src/eth.png" />
+            <img src={Eth} />
             <p>{eth}</p>
           </div>
         </>)

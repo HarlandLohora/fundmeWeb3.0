@@ -1,7 +1,8 @@
 import React from "react"
 import { HPSpace } from "./styles"
 import Button from "@mui/material/Button"
-
+import Meta from "../../metamask.webp"
+import Eth from "../../ether.svg"
 const index = ({ connectWallet }) => {
     return (
         <HPSpace>
@@ -14,7 +15,7 @@ const index = ({ connectWallet }) => {
                 >
                     Connect wallet
                     <img
-                        src="/src/metamask.webp"
+                        src={Meta}
                         style={{
                             width: "40px",
                         }}
@@ -22,7 +23,7 @@ const index = ({ connectWallet }) => {
                 </Button>
             </div>
             <img
-                src="/src/ether.svg"
+                src={Eth}
                 alt="Ether"
             />
         </HPSpace>
